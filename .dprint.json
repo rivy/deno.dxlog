@@ -1,0 +1,48 @@
+{
+	"$schema": "https://dprint.dev/schemas/v0.json",
+	"incremental": true,
+	"indentWidth": 2,
+	"lineWidth": 100,
+	"useTabs": true,
+	"typescript": {
+		// ref: <https://dprint.dev/plugins/typescript/config>
+		"deno": true,
+		// * customize preferences (overrides of some Deno formatting choices)
+		// ref: <https://github.com/dprint/dprint-plugin-typescript/blob/44b6cf562e511a308f4a7183dc98fb19cdf21d07/src/configuration/builder.rs#L51>
+		"lineWidth": 100,
+		"preferSingleLine": true,
+		"quoteStyle": "preferSingle",
+		//
+		"ignoreNodeCommentText": "dprint-ignore", // from Deno's "deno-fmt-ignore"
+		"ignoreFileCommentText": "dprint-ignore-file", // from Deno's "deno-fmt-ignore-file"
+		"memberExpression.linePerExpression": true,
+		"memberExpression.preferSingleLine": true,
+		"module.sortImportDeclarations": "caseInsensitive",
+		"module.sortExportDeclarations": "caseInsensitive"
+	},
+	"json": { "preferSingleLine": true },
+	"markdown": { "lineWidth": 99999, "textWrap": "always" },
+	"prettier": { "printWidth": 100, "singleQuote": true, "tabWidth": 2 },
+	"rustfmt": {},
+	"includes": ["**/*.{ts,tsx,js,jsx,cjs,mjs,json,md,mkd,rs,yaml,yml}"],
+	"excludes": [
+		".history",
+		".changelog/*.tpl[-_.#]*",
+		"CHANGELOG{,.*}",
+		"**/node_modules",
+		"**/*-lock.json",
+		"**/target",
+		"**/vendor"
+	],
+	"plugins": [
+		// ref: <https://plugins.dprint.dev>
+		"https://plugins.dprint.dev/typescript-0.51.0.wasm",
+		"https://plugins.dprint.dev/json-0.12.3.wasm",
+		"https://plugins.dprint.dev/markdown-0.9.5.wasm",
+		"https://plugins.dprint.dev/toml-0.4.1.wasm",
+		// ref: <https://github.com/dprint/dprint-plugin-rustfmt/releases>
+		"https://plugins.dprint.dev/rustfmt-0.4.0.exe-plugin@c6bb223ef6e5e87580177f6461a0ab0554ac9ea6b54f78ea7ae8bf63b14f5bc2",
+		// ref: <https://github.com/dprint/dprint-plugin-prettier/releases>
+		"https://plugins.dprint.dev/prettier-0.2.2.exe-plugin@63b06beba3acd51e6d23379c47db342a1a24f3d88f3c52a775e2db3426124582"
+	]
+}
