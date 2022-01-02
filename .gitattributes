@@ -1,7 +1,7 @@
 # default; use LF EOLs for text files
 * text=auto eol=lf
 
-# BAT/CMD and SLN files require CRLF line endings (for windows)
-*.{bat,[bB][aA][tT]}    text eol=crlf
-*.{cmd,[cC][mM][dD]}    text eol=crlf
-*.{sln,[sS][lL][nN]}    text eol=crlf
+# (CRLF required) * WinOS BAT/CMD and MSVC SLN files require CRLF EOLs
+*.[bB][aA][tT]    text eol=crlf
+*.[cC][mM][dD]    text eol=crlf
+*.[sS][lL][nN]    text eol=crlf
